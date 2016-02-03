@@ -1,0 +1,14 @@
+.navbar-fixed-top {
+    background-color: #fff;
+    border-color: rgb(13, 46, 133);
+}
+
+.navbar-brand > img {
+    position: relative;
+    top: -8px;
+    height: 35px;
+}
+
+.container > div[ui-view] {
+    padding-top: 50px;
+}
