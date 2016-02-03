@@ -24,13 +24,6 @@
                 controller: 'IssuesController',
                 controllerAs: 'Issues',
                 templateUrl: 'views/issues.html'
-            })
-
-            .state("records", {
-                url: "/records",
-                controller: 'RecordsController',
-                controllerAs: 'Records',
-                templateUrl: 'views/records.html'
             });
 
         }

@@ -38,7 +38,6 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a ui-sref="home"><i class="fa fa-home"></i> Home</a></li>
                         <li><a ui-sref="issues"><i class="fa fa-bug"></i> Issues</a></li>
-                        <li><a ui-sref="records"><i class="fa fa-list-ol"></i> Statement Records</a></li>
                     </ul>
                 </div>
             </div>
@@ -50,15 +49,15 @@
         </div>
 
         <!-- build:js -->
+        <script type="text/javascript" src="bower_components/x2js/xml2json.min.js"></script>
         <script type="text/javascript" src="bower_components/angular/angular.js"></script>
         <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script type="text/javascript" src="bower_components/angular-xml/angular-xml.min.js"></script>
         <script type="text/javascript" src="app.js"></script>
         <script type="text/javascript" src="scripts/controllers/home.ctrl.js"></script>
         <script type="text/javascript" src="scripts/controllers/issues.ctrl.js"></script>
-        <script type="text/javascript" src="scripts/controllers/records.ctrl.js"></script>
         <script type="text/javascript" src="scripts/directives/file-reader.directive.js"></script>
         <script type="text/javascript" src="scripts/services/parse-csv.service.js"></script>
-        <script type="text/javascript" src="scripts/services/parse-xml.service.js"></script>
         <!-- endbuild -->
 
         <!-- build:livereload -->

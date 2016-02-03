@@ -8,6 +8,8 @@
     "bootstrap": "3.3.2",
     "font-awesome": "4.3.0",
     "angular-mocks": "1.4.9",
-    "angular-ui-router": "0.2.17"
+    "angular-ui-router": "0.2.17",
+    "angular-xml": "^2.2.1",
+    "abdmob/x2js": "x2js#^1.2.0"
   }
 }

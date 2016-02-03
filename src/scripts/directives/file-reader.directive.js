@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('RabobankAssignment')
-    .directive('fileReader', ['ParseCSV', 'ParseXML', function(ParseCSV, ParseXML) {
+    .directive('fileReader', ['ParseCSV', function(ParseCSV) {
         return {
             scope: {
                 fileReader: "=",
