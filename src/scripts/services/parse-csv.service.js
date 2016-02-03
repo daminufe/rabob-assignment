@@ -6,7 +6,7 @@
         String.prototype.replaceAll = function (search, replacement) {
             var target = this;
             return target.replace(new RegExp(search, 'g'), replacement);
-        }
+        };
 
         return function (strData, strDelimiter) {
             strDelimiter = (strDelimiter || ",");
@@ -21,18 +21,19 @@
 
             var arrData = [[]];
             var arrMatches = null;
-
+            var strMatchedDelimiter = null;
+            var strMatchedValue = null;
             while (arrMatches = objPattern.exec(strData)) {
-                var strMatchedDelimiter = arrMatches[1];
+                strMatchedDelimiter = arrMatches[1];
                 if (strMatchedDelimiter.length && (strMatchedDelimiter != strDelimiter)) {
                     arrData.push([]);
                 }
 
                 if (arrMatches[2]) {
-                    var strMatchedValue = arrMatches[2]
+                    strMatchedValue = arrMatches[2]
                         .replace(new RegExp("\"\"", "g"), "\"");
                 } else {
-                    var strMatchedValue = arrMatches[3];
+                    strMatchedValue = arrMatches[3];
                 }
 
                 arrData[arrData.length - 1].push(strMatchedValue);
@@ -45,7 +46,7 @@
                 for (var k = 0; k < arrData[0].length && k < arrData[i].length; k++) {
                     var key = arrData[0][k];
                     key = key.toLowerCase().replaceAll(' ', '_');
-                    objArray[i - 1][key] = arrData[i][k]
+                    objArray[i - 1][key] = arrData[i][k];
                 }
             }
 
