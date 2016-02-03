@@ -7,9 +7,8 @@ describe('HomeController', function() {
         $controller = _$controller_;
     }));
 
-    describe('$scope.page', function() {
-        it('verify if page is Homepage', function() {
-            var $scope = {};
+    describe('homepage controller', function() {
+        it('should have controller properties defined', function() {
             var controller = $controller('HomeController');
             expect(controller.page).toEqual('Homepage');
         });

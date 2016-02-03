@@ -2,10 +2,11 @@
     'use strict';
 
     angular.module('RabobankAssignment')
-    .controller('IssuesController', ['$scope', function($scope) {
+    .controller('IssuesController', [function() {
         var vm = this;
         vm.page = 'Issues';
         vm.issuesMinimum = 0;
+        vm.validIssues = false;
 
         vm.isValidIssues = function (issues) {
             issues.forEach(function (issue) {
