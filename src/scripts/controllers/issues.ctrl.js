@@ -5,6 +5,7 @@
     .controller('IssuesController', ['$scope', function($scope) {
         var vm = this;
         vm.page = 'Issues';
+        vm.issuesMinimum = 0;
 
         vm.isValidIssues = function (issues) {
             issues.forEach(function (issue) {
@@ -15,6 +16,12 @@
                     vm.validIssues = false;
                 }
             });
+        };
+
+        vm.greaterThan = function (prop, value) {
+            return function (item) {
+                return item[prop] > value;
+            };
         };
     }]);
 }(angular));

@@ -5,6 +5,12 @@
 
 <h1><i class="fa fa-bug"></i> Issues</h1>
 
+<div class="form-group" ng-if="Issues.validIssues">
+    <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-filter"></i></div>
+        <input type="number" ng-model="Issues.issuesMinimum" class="form-control" placeholder="Filter by minimum amount of issues">
+    </div>
+</div>
 
 <span class="pull-right arrow" ng-if="!Issues.fileContent">
     <img src="img/arrow.png" alt="">
@@ -28,7 +34,7 @@
         </thead>
 
         <tbody>
-            <tr ng-repeat="issue in Issues.fileContent">
+            <tr ng-repeat="issue in Issues.fileContent | filter: Issues.greaterThan('issue_count', Issues.issuesMinimum)">
                 <td ng-bind="issue.first_name"></td>
                 <td ng-bind="issue.sur_name"></td>
                 <td ng-bind="issue.issue_count"></td>
