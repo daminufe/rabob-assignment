@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('RabobankAssignment')
-    .directive('fileReader', ['ParseCSV', function(ParseCSV) {
+    .directive('fileReader', ['ParseCSV', 'ParseXML', function(ParseCSV, ParseXML) {
         return {
             scope: {
                 fileReader: "=",
@@ -16,7 +16,12 @@
                         r.onload = function(e) {
                                 var contents = e.target.result;
                                 scope.$apply(function () {
-                                    var result = new ParseCSV(contents);
+                                    var result = null;
+                                    if (files[0].name.indexOf('csv') > -1) {
+                                        result = new ParseCSV(contents);
+                                    } else if (files[0].name.indexOf('xml') > -1) {
+                                        result = new ParseXML(contents);
+                                    }
                                     scope.fileReader = result;
                                     scope.validateFn({ arg1: result });
                                 });
