@@ -23,7 +23,7 @@
             var arrMatches = null;
             var strMatchedDelimiter = null;
             var strMatchedValue = null;
-            while (arrMatches = objPattern.exec(strData)) {
+            while ((arrMatches = objPattern.exec(strData)) !== null) {
                 strMatchedDelimiter = arrMatches[1];
                 if (strMatchedDelimiter.length && (strMatchedDelimiter != strDelimiter)) {
                     arrData.push([]);

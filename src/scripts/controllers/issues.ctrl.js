@@ -21,7 +21,7 @@
 
         vm.greaterThan = function (prop, value) {
             return function (item) {
-                return item[prop] > value;
+                return item[prop] >= value;
             };
         };
     }]);
